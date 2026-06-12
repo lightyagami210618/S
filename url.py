@@ -13,7 +13,7 @@ def check_single_code(sessionurl, code):
         
         start_url = f'{sessionurl}'
         
-        response = session.get(start_url, headers=headers)
+        response = session.get(start_url, headers=headers, timeout=1)
         
         redirect_url = response.url
         #print(redirect_url)
@@ -42,7 +42,7 @@ def check_single_code(sessionurl, code):
             'apiVersion': 1,
         }
         
-        response = session.post('https://portal-as.ruijienetworks.com/api/auth/voucher/', params=params, headers=headers, json=json_data)
+        response = session.post('https://portal-as.ruijienetworks.com/api/auth/voucher/', params=params, headers=headers, json=json_data, timeout=1)
         return response.text
         
     except Exception as e:
