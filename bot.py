@@ -38,7 +38,7 @@ def start_fast_scan(chat_id, message_id, sessionurl):
                 )
                 last_update_time = time.time()
             
-            if "success_text" in response: 
+            if "true" in response: 
                 success_count += 1
                 bot.send_message(chat_id, f"✅ Success Code တွေ့ပြီ: {code} ({success_count}/5)")
                 if success_count >= 5:
